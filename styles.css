@@ -1,0 +1,308 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(to right, #f0f4c3, #dce775);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://www.freepik.com/free-photos-vectors/registration-background');
+    background-size: cover;
+}
+
+.main_container {
+    width: 98%;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 2px solid #363636;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4caf50;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #388e3c;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #080707;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #46b24a;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    height: 100px;
+    resize: none; /* Prevents resizing */
+}
+
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+}
+
+/* Navigation */
+.navbar {
+    background: #0b100e;
+    padding: 5px;
+    gap: 2px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+/* hover over navbar ul */
+
+.navbar ul:hover li {
+    background: #057ff9;
+}
+
+.navbar ul li :hover a {
+    color: rgb(226, 66, 66);
+}
+.navbar li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: rgb(255, 254, 254);
+    text-decoration: none;
+    font-weight: bold;
+}
+/* hovering over the .navbar a */
+
+.navbar a:hover {
+    color: #28a745;
+    text-decoration:dotted
+
+}
+
+/* Footer */
+
+.footer {
+    background: #0b100e;
+    padding: 20px;
+    text-align: center;
+    color: rgb(255, 254, 254);
+}
+
+.footer a {
+    color: rgb(255, 254, 254);
+    text-decoration: none;
+}
+.search_box {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search_box input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search_box button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero_section {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero_section h1 {
+    font-size: 2.5em;
+}
+/* add media strings for  responsive design  to phone , tablet and monitor screens*/
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+   .main_container {
+        padding: 20px;
+    }
+   .hero_section {
+        padding: 50px 10px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        font-size: 18px;
+    }
+   .main_container {
+    padding: 30px;
+    }
+   .hero_section {
+    padding: 60px 20px;
+    }
+}
+
+@media (min-width: 901px) {
+    body {
+        font-size: 20px;
+    }
+   .main_container {
+    padding: 40px;
+    }
+   .hero_section {
+    padding: 80px 30px;
+   }
+}
+
+@media (min-width: 1201px) {
+    body {
+        font-size: 22px;
+    }
+   .main_container {
+    padding: 50px;
+    }
+   .hero_section {
+    padding: 100px 40px;
+    }
+}
+/* annimations to the  */
+/* Staff Section */
+.our_staff {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.staff_member {
+    display: inline-block;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards; /* Apply animation */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.staff_member:nth-child(1) {
+    animation-delay: 0.2s; /* Delay for staggered effect */
+}
+
+.staff_member:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.staff_member:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.staff_member img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.staff_member h3 {
+    margin-top: 10px;
+    color: #388e3c;
+}
+
+.staff_member p {
+    color: #666;
+}
+
+/* Existing styles... */

@@ -1,0 +1,147 @@
+<!-- a simple signup website -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is the signup form for the website">
+    <!-- refreshing the website -->
+    <meta http-equiv="refresh" content="120">
+      <meta name="keywords" content="signup, form, website, kelvin coding academy">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>kelvin coding academy | signup website</title>
+    <link rel="stylesheet" href="signup.css">
+  </head>
+  <body>
+    <div class="main_container">
+      <h1>Signup Form</h1>
+      <div class="heading">
+        <h2 class="second_heading">Welcome to Our Website!</h2>
+        <p>Please fill out this form to create an account.</p>
+      </div>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required placeholder="first name"/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required placeholder="last name"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="example@gmail.com"/>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" id="pwd" name="pwd" required placeholder="eg T1fdv7jfncd8!@$5"/>
+        </div>
+        <div class="form-group">
+          <label for="confirm_pwd">Confirm Password:</label>
+          <input type="password" id="confirm_pwd" name="confirm_pwd" required  placeholder="eg T1fdv7jfncd8!@$5"/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="eg +2344758996985"/>
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" required placeholder="CMR  2, 1st Avenue, Yaounde, Cameroon"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required placeholder="eg Yaounde" />
+        </div>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required placeholder="eg Peter 123"/>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required placeholder="dd/mm/yyyy"/>
+        </div>
+        <!-- creating some radio buttons for their best programming langueage or level of coding -->
+          <label for="programming_lang">Best Programming Language:</label>
+          <div class="radio-group">
+            <input type="radio" id="python" name="programming_lang" value="python" required>
+            <label for="python">Python</label>
+            <input type="radio" id="java" name="programming_lang" value="java">
+            <label for="java">Java</label>
+            <input type="radio" id="javascript" name="programming_lang" value="javascript">
+            <label for="javascript">JavaScript</label>
+            <input type="radio" id="c++" name="programming_lang" value="c++">
+            <label for="c++">C++</label>
+            <input type="radio" id="ruby" name="programming_lang" value="ruby">
+            <label for="ruby">Ruby</label>
+            <input type="radio" id="go" name="programming_lang" value="go">
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="binary">Binary</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+      <div id="output" style="margin-top: 20px"></div>
+    </div>
+    <!-- section for my javescript implementation -->
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Collect form data
+          const formData = {
+            fname: document.getElementById("fname").value,
+            lname: document.getElementById("lname").value,
+            phone: document.getElementById("phone").value,
+            address: document.getElementById("address").value,
+            city: document.getElementById("city").value,
+            username: document.getElementById("username").value,
+            dob: document.getElementById("dob").value,
+            gender: document.getElementById("gender").value,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          };
+
+          // Display the form data
+          document.getElementById("output").innerHTML = `
+            <h3>Submitted Information:</h3>
+            <pre>${JSON.stringify(formData, null, 2)}</pre>
+        `;
+        });
+        // Show success message when form is submitted successfully
+        setTimeout(() => {
+          document.getElementById("output").innerHTML += `
+            <div class="success-message">Form submitted successfully!</div>
+        `;
+        }, 5500);
+
+        // Add a random text shadow to the page
+        const randomShadow = `
+          text-shadow: ${Math.floor(Math.random() * 5)}px ${Math.floor(Math.random() * 5)}px ${Math.floor(Math.random() * 10)}px ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}`;
+        document.body.style.textShadow = randomShadow;
+        // Add a random font color to the page
+        const randomColorHex = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")}`;
+        document.body.style.color = randomColorHex;
+        // redirecting the user to the home page after successful creating a new account
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        // This is just a placeholder for successful login
+        const isLoginSuccessful = true; // Replace with actual login logic
+
+        if (isLoginSuccessful) {
+            window.location.href = "login.html"; // Redirect to index.html
+        } else {
+            alert("Login failed! Please check your credentials.");
+        }
+    });
+    </script>
+  </body>
+</html>

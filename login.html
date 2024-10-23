@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kelvin McAllister">
+    <meta name="keywords" content="coding, academy, login, user, admin">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="description" content="User login page for the website">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Kelvin Coding Academy | Login</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        /* hover sffect on the signup link */
+        a:hover {
+            text-decoration: underline;
+            color: #fefefe;
+            border-radius: 2px;
+            transition: color 0.3s;
+            background-color: rgb(1, 88, 1);
+        }
+        /* responsive design for smaller screens */
+        @media (max-width: 600px) {
+            body {
+                height: auto;
+            }
+           .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+    <form id="loginForm" action="/login" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password"/>
+        </div>
+        <input type="submit" value="Login" />
+    </form>
+    <div class="signup-link">
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+</div>
+
+<script>
+    // Validate form on submit
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // Prevent form submission
+        event.preventDefault();
+        
+        // Get form inputs
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Perform validation
+        if (username === '' || password === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Perform authentication
+        // Replace this with your own logic for authentication
+        if (username === 'admin' && password === 'password') {
+            alert('Login successful!');
+            // Redirect to the dashboard or desired page
+            window.location.href = 'dashboard.html';
+        } else {
+            alert('Invalid username or password');
+        }
+    });
+    // Add a keyup event listener to the password field
+    document.getElementById('password').addEventListener('keyup', function(event) {
+        // If the Enter key is pressed, submit the form
+        if (event.key === 'Enter') {
+            document.getElementById('loginForm').submit();
+        }
+    });
+    // Focus the username field on page load
+    document.getElementById('username').focus();
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        // This is just a placeholder for successful login
+        const isLoginSuccessful = true; // Replace with actual login logic
+
+        if (isLoginSuccessful) {
+            window.location.href = "index.html"; // Redirect to index.html
+        } else {
+            alert("Login failed! Please check your credentials.");
+        }
+    });
+    </script>
+</body>
+</html>
